@@ -1,7 +1,13 @@
 ## Demo implementation of an API rate limiter with Spring Boot and Redis
 
 In this demo, I implemented rate limiter with [sliding window](https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/)
-algorithm. 
+algorithm.
+
+Note that in production, if your backend sits behind a load balancer, you will need to get the remote Ip from the header:
+
+```
+String ipAddress = request.getHeader("X-FORWARDED-FOR");
+```
 
 
 **Requirement:**
